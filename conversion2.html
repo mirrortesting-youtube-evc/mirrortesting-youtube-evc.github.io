@@ -12,11 +12,13 @@
 </script>
 <!-- Event snippet for 64-bit type purchase conversion page -->
 <script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
   gtag('event', 'conversion', {
       'send_to': 'AW-448812149/TO-DCICAgIAYEPWogdYB',
       'value': 0.2,
       'currency': 'USD',
-      'transaction_id': Date.now()
+      'transaction_id': urlParams.get('transaction_id') || Date.now(),
   });
 </script>
 </head>

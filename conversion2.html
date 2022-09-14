@@ -8,6 +8,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  
+  gtag('config', 'G-1PRCDD487K', {
+    'custom_map': {'dimension1': 'dyetest_id'}
+  });
 </script>
 <!-- Event snippet for 64-bit type purchase conversion page -->
 <script>
@@ -16,6 +20,23 @@
       'value': 0.2,
       'currency': 'USD',
       'transaction_id': Date.now()
+  });
+  <!-- gtag for GA4 preprod -->
+  gtag('event', 'purchase', {
+    'debug_mode': true,
+    'transaction_id': Date.now(),
+    'dyetest_id': Date.now(),
+    'value': 0.2,
+    'currency': 'USD',
+    'items': [
+      {
+        'item_id': 'mirror_yt_evc_item',
+        'item_name': 'mirror_yt_evc_item',
+        'price': 0.2,
+        'currency': 'USD',
+        'quantity': 1
+      }
+    ]
   });
 </script>
 </head>

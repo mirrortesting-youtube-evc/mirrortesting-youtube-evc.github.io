@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1PRCDD487K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1PRCDD487K', {
+    'custom_map': {'dimension1': 'dyetest_id'}
+  });
+</script>
+<script>
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  <!-- gtag for GA4 preprod -->
+  gtag('event', 'purchase', {
+    'debug_mode': true,
+    'transaction_id': urlParams.get('transaction_id') || Date.now(),
+    'dyetest_id': urlParams.get('transaction_id') || Date.now(),
+    'value': 1.0,
+    'currency': 'USD',
+    'items': [
+      {
+        'item_id': 'mirror_test_item',
+        'item_name': 'mirror_test_item',
+        'price': 1.0,
+        'currency': 'USD',
+        'quantity': 1
+      }
+    ]
+  });
+</script>
+</head>
+
+<title>Conversion</title>
+<p> Conversion </p>
